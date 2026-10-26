@@ -138,12 +138,13 @@ body.dark-mode .toolbar input,body.dark-mode .toolbar select,body.dark-mode .sea
 @media(min-width:701px) and (max-width:1000px){.magazine-grid{grid-template-columns:repeat(3,minmax(0,1fr));grid-auto-rows:200px}.community-grid{grid-template-columns:repeat(2,minmax(0,1fr))}}
 
 
-/* Ajuste de portada móvil: evita el recorte/zoom excesivo de faro.png */
+/* Portada móvil: la fotografía ocupa toda el área de la portada sin recortarse por cover.
+   La imagen se escala al ancho y alto disponibles en móviles; el degradado queda encima. */
 @media (max-width: 700px) {
   .hero {
     background-image: linear-gradient(135deg, rgba(3,34,56,.70), rgba(6,93,122,.30)), url("faro.png");
-    background-size: cover, contain;
-    background-position: center, center top;
+    background-size: cover, 100% 100%;
+    background-position: center, center;
     background-repeat: no-repeat;
     background-attachment: scroll;
     background-color: #032238;
